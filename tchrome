@@ -1,0 +1,30 @@
+#!/bin/bash
+declare -r myname='tchrome'
+declare -r myver='1.1'
+
+usage() {
+	echo "$myname : "Close Chrome browser including background, or launch a version of Google Chrome/Chromium"
+	echo "Usage : $myname [-hv]"
+	echo "  -h/--help    Display this text and exit"
+	echo "  -v/--version Display version and exit"
+	echo "Configure Chrome version launched by $myname in /etc/${myname}.conf"
+	echo "Make it 'clickable' by putting tchrome.desktop a.k.a 'Toggle Chrome (tchrome)' on a launcher"
+}
+
+version() {
+	printf "%s %s\n" "$myname" "$myver"
+}
+
+if [ $# -gt 0 ]; then
+	case $1 in
+		-v|--version)
+		version; exit 0;;
+		-h|--help)
+		usage; exit 0;;
+		*)
+		usage; exit 1;;
+	esac
+fi
+
+source /etc/tchrome.conf
+pgrep chrome &>/dev/null && pkill chrome || eval $chromecommand

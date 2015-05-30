@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Toggle Chrome
+Comment=pgrep chrome &>/dev/null && pkill chrome || google-chrome-unstable
+Exec=bash tchrome
+Type=Application
+StartupNotify=true
+Icon=window-close
+Categories=System;
