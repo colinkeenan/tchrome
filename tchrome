@@ -3,7 +3,7 @@ declare -r myname='tchrome'
 declare -r myver='1.1'
 
 usage() {
-	echo "$myname : "Close Chrome browser including background, or launch a version of Google Chrome/Chromium"
+	echo "$myname : Close Chrome browser including background, or launch a version of Google Chrome/Chromium"
 	echo "Usage : $myname [-hv]"
 	echo "  -h/--help    Display this text and exit"
 	echo "  -v/--version Display version and exit"
