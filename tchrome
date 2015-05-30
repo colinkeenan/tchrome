@@ -27,4 +27,4 @@ if [ $# -gt 0 ]; then
 fi
 
 source /etc/tchrome.conf
-pgrep chrome &>/dev/null && pkill chrome || eval $chromecommand
+pgrep chrome &>/dev/null && pkill chrome || eval $tchromecommand
