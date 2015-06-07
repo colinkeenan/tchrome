@@ -1,6 +1,6 @@
 #!/bin/bash
 declare -r myname='tchrome'
-declare -r myver='1.1'
+declare -r myver='1.2'
 
 usage() {
 	echo "$myname : Close Chrome browser including background, or launch a version of Google Chrome/Chromium"
@@ -26,5 +26,12 @@ if [ $# -gt 0 ]; then
 	esac
 fi
 
-source /etc/tchrome.conf
-pgrep chrome &>/dev/null && pkill chrome || eval $tchromecommand
+source /etc/tchrome.conf #get tchromecommand
+if pgrep chrome &>/dev/null 
+then 
+	CHROME_WIN_IDs=$(wmctrl -l | grep "Google Chrome" | cut -f1 -d' ')
+	for i in $CHROME_WIN_IDs; do wmctrl -ic "$i"; done
+	pkill chrome 
+else
+	eval $tchromecommand
+fi
