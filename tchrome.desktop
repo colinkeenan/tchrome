@@ -4,5 +4,5 @@ Comment=pgrep chrome && close all chrome || run chrome
 Exec=bash tchrome
 Type=Application
 StartupNotify=true
-Icon=window-close
+Icon=tchrome;
 Categories=System;
