@@ -4,5 +4,5 @@ Comment=pgrep chrome && close all chrome || run chrome
 Exec=bash tchrome
 Type=Application
 StartupNotify=true
-Icon=/usr/share/icons/hicolor/scalable/apps/tchrome.svg;
+Icon=/usr/share/icons/hicolor/scalable/apps/tchrome.svg
 Categories=System;
