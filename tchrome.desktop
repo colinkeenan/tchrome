@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Toggle Chrome (tchrome)
 Comment=pgrep chrome && close all chrome || run chrome
-Exec=bash tchrome
+Exec=bash /usr/bin/tchrome
 Type=Application
 StartupNotify=true
 Icon=/usr/share/icons/hicolor/scalable/apps/tchrome.svg
