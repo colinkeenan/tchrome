@@ -1,6 +1,6 @@
 #!/bin/bash
 declare -r myname='tchrome'
-declare -r myver='1.4'
+declare -r myver='1.5'
 
 usage() {
 	echo "$myname : Close Chrome browser including background, or launch a version of Google Chrome/Chromium"
@@ -32,7 +32,7 @@ then
 	CURR_DESKTOP=$(wmctrl -d | grep '*' | cut -f1 -d' ')
 	CHROME_WIN_IDs=$(wmctrl -l | grep "Google Chrome" | cut -f1 -d' ')
 	for i in $CHROME_WIN_IDs; do wmctrl -ic "$i"; done
-	pkill chrome 
+	pkill -x chrome #the -x flag prevents pkill from killing this tchrome script
 	[ $CURR_DESKTOP -eq 0 ] && wmctrl -s 1 || wmctrl -s 0
 else
 	eval $tchromecommand
